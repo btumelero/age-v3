@@ -1,8 +1,14 @@
-package ageV3;
+package agev3.civilizacoes;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.Map;
+
+import agev3.criacoes.construcoes.Construcoes;
+import agev3.criacoes.construcoes.ConstrucoesQueCriam;
+import agev3.criacoes.construcoes.TiposDeConstrucoes;
+import agev3.criacoes.construcoes.TiposDeConstrucoesQueCriam;
+import agev3.criacoes.dados.Ataque;
 
 /**
  *
@@ -13,8 +19,8 @@ public class ConstrucoesDaCivilizacao {
   private final Map<TiposDeConstrucoes, ArrayList<Construcoes>> construcoes;
 
   public boolean add(Construcoes construcao) {
-    if (construcoes.get(TiposDeConstrucoes.valueOf(construcao.tipoDeObjeto.name())).add(construcao)) {
-      construcao.civilizacao.atualizarCapacidade();
+    if (construcoes.get(TiposDeConstrucoes.valueOf(construcao.getTipoDeObjeto().name())).add(construcao)) {
+      construcao.getCivilizacao().atualizarCapacidade();
       return true;
     }
     return false;
@@ -33,9 +39,9 @@ public class ConstrucoesDaCivilizacao {
   }
 
   public boolean remove(Construcoes construcao) {
-    if (construcoes.get(TiposDeConstrucoes.valueOf(construcao.tipoDeObjeto.name())).remove(construcao)) {
-      construcao.civilizacao.atualizarCapacidade();
-      Ataque.checarSeCivilizacaoFoiExtinta(construcao.civilizacao);
+    if (construcoes.get(TiposDeConstrucoes.valueOf(construcao.getTipoDeObjeto().name())).remove(construcao)) {
+      construcao.getCivilizacao().atualizarCapacidade();
+      Ataque.checarSeCivilizacaoFoiExtinta(construcao.getCivilizacao());
       return true;
     }
     return false;

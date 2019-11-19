@@ -1,4 +1,7 @@
-package ageV3;
+package agev3;
+
+import agev3.civilizacoes.Partida;
+import agev3.civilizacoes.TiposDeCivilizacoes;
 
 /**
  *
@@ -13,8 +16,8 @@ public class Age {
     Partida partida = new Partida();
     partida.add(TiposDeCivilizacoes.EGIPCIOS);
     partida.add(TiposDeCivilizacoes.GREGOS);
-    TodasAsCriacoesDaCivilizacao civilizacao1 = partida.getCivilizacao(0).todasCriacoes;
-    TodasAsCriacoesDaCivilizacao civilizacao2 = partida.getCivilizacao(1).todasCriacoes;
+    //TodasAsCriacoesDaCivilizacao civilizacao1 = partida.getCivilizacao(0).todasCriacoes;
+    //TodasAsCriacoesDaCivilizacao civilizacao2 = partida.getCivilizacao(1).todasCriacoes;
     
     /*System.out.println("Teste de Construção");
     System.out.println(civilizacao1.get(TiposDeConstrucoes.TEMPLO).size());

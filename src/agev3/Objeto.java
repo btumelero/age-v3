@@ -1,5 +1,6 @@
-package ageV3;
+package agev3;
 
+import agev3.civilizacoes.TiposDeCivilizacoes;
 /**
  *
  * @author Bruno

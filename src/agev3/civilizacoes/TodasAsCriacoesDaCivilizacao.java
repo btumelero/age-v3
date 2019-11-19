@@ -1,6 +1,17 @@
-package ageV3;
+package agev3.civilizacoes;
 
 import java.util.ArrayList;
+
+import agev3.criacoes.CriavelDurantePartida;
+import agev3.criacoes.Posicao;
+import agev3.criacoes.construcoes.Construcoes;
+import agev3.criacoes.construcoes.ConstrucoesQueCriam;
+import agev3.criacoes.construcoes.TiposDeConstrucoes;
+import agev3.criacoes.construcoes.TiposDeConstrucoesQueCriam;
+import agev3.criacoes.unidades.Campones;
+import agev3.criacoes.unidades.Sacerdote;
+import agev3.criacoes.unidades.TiposDeUnidades;
+import agev3.criacoes.unidades.Unidades;
 
 /**
  *
@@ -10,9 +21,14 @@ public class TodasAsCriacoesDaCivilizacao {
   public final UnidadesDaCivilizacao unidades;
   public final ConstrucoesDaCivilizacao construcoes;
   
+  /**
+   * Adiciona uma criação nas criações da civilização
+   * @param criacao A criação a ser adicionada
+   * @return Verdadeiro se adicionou no mapa, independentemente se for unidade ou construção
+   */
   public boolean add (CriavelDurantePartida criacao) {
     if (criacao != null) {
-      return //verdadeiro se adicionou no mapa, independentemente se for unidade ou construção
+      return
       criacao instanceof Unidades ? 
         unidades.add((Unidades) criacao) : 
         construcoes.add((Construcoes) criacao)
@@ -70,9 +86,14 @@ public class TodasAsCriacoesDaCivilizacao {
     return unidades.getSacerdote(i);
   }
   
+  /**
+   * Remove uma criação das criações da civilização
+   * @param criacao A criação a ser removida
+   * @return Verdadeiro se removeu do mapa, independentemente se for unidade ou construção
+   */
   public boolean remove (CriavelDurantePartida criacao) {
     if (criacao != null) {
-      return //verdadeiro se adicionou no mapa, independentemente se for unidade ou construção
+      return
       criacao instanceof Unidades ? 
         unidades.remove((Unidades) criacao) : 
         construcoes.remove((Construcoes) criacao)

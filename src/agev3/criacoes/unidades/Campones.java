@@ -1,4 +1,14 @@
-package ageV3;
+package agev3.criacoes.unidades;
+
+import agev3.civilizacoes.Civilizacao;
+import agev3.civilizacoes.TiposDeCivilizacoes;
+import agev3.civilizacoes.TiposDeRecursos;
+import agev3.criacoes.Posicao;
+import agev3.criacoes.TiposCriaveisDurantePartidas;
+import agev3.criacoes.construcoes.Construcoes;
+import agev3.criacoes.construcoes.TiposDeConstrucoes;
+import agev3.criacoes.dados.Custo;
+import agev3.criacoes.dados.PontosDeVida;
 
 public class Campones extends Unidades {
   

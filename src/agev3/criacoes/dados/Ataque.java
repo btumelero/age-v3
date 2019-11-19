@@ -1,7 +1,14 @@
-package ageV3;
+package agev3.criacoes.dados;
+
+import agev3.civilizacoes.Civilizacao;
+import agev3.civilizacoes.Partida;
+import agev3.criacoes.CriavelDurantePartida;
+import agev3.criacoes.unidades.Unidades;
 
 /**
- * Armazena o valor do ataque de todas as unidades e construções que podem atacar algo
+ * Armazena o valor do ataque de todas as unidades e construções que podem
+ * atacar algo
+ * 
  * @author Bruno
  */
 public enum Ataque {
@@ -24,13 +31,9 @@ public enum Ataque {
    */
   public static void atacar(CriavelDurantePartida criacao, CriavelDurantePartida alvo) {
     if (criacao != null && alvo != null) {
-      if (Alcance.dentroDoAlcance(criacao, alvo.posicao)) {
-        if (criacao.tipoDeObjeto.temAtaque()) {
-          causarDano(Ataque.valueOf(criacao.tipoDeObjeto.name()), alvo);
-          if (alvo.pontosDeVida <= 0) {
-            System.out.println("O inimigo foi morto/destruído");
-            alvo.civilizacao.todasCriacoes.remove(alvo);
-          }
+      if (Alcance.dentroDoAlcance(criacao, alvo.getPosicao())) {
+        if (criacao.getTipoDeObjeto().temAtaque()) {
+          causarDano(Ataque.valueOf(criacao.getTipoDeObjeto().name()), alvo);
         } else {
           System.out.println("Esse objeto não pode atacar");
         }
@@ -43,10 +46,10 @@ public enum Ataque {
   private static void causarDano(Ataque atacante, CriavelDurantePartida alvo) {
     int dano = atacante.getAtaque();
     if (alvo instanceof Unidades) {
-      dano -= Armadura.valueOf(alvo.tipoDeObjeto.name()).getArmadura();
+      dano -= Armadura.valueOf(alvo.getTipoDeObjeto().name()).getArmadura();
     }
-    alvo.pontosDeVida -= dano;
-    System.out.println(alvo.tipoDeObjeto.toString() + " recebeu " + dano + " de dano");
+    alvo.descontarDosPontosDeVida(dano);
+    System.out.println(alvo.getTipoDeObjeto().toString() + " recebeu " + dano + " de dano");
   }
   
   public static void checarSeCivilizacaoFoiExtinta(Civilizacao civilizacao) {

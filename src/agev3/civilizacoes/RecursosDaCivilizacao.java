@@ -1,4 +1,4 @@
-package ageV3;
+package agev3.civilizacoes;
 
 import java.util.EnumMap;
 import java.util.Map;

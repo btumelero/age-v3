@@ -1,8 +1,14 @@
-package ageV3;
+package agev3.civilizacoes;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.Map;
+
+import agev3.criacoes.dados.Ataque;
+import agev3.criacoes.unidades.Campones;
+import agev3.criacoes.unidades.Sacerdote;
+import agev3.criacoes.unidades.TiposDeUnidades;
+import agev3.criacoes.unidades.Unidades;
 
 /**
  *
@@ -13,8 +19,8 @@ public class UnidadesDaCivilizacao {
   private final Map<TiposDeUnidades, ArrayList<Unidades>> unidades;
 
   public boolean add(Unidades unidade) {
-    if (unidades.get(TiposDeUnidades.valueOf(unidade.tipoDeObjeto.name())).add(unidade)) {
-      unidade.civilizacao.atualizarPopulacaoAtual();
+    if (unidades.get(TiposDeUnidades.valueOf(unidade.getTipoDeObjeto().name())).add(unidade)) {
+      unidade.getCivilizacao().atualizarPopulacaoAtual();
       return true;
     }
     return false;
@@ -43,9 +49,9 @@ public class UnidadesDaCivilizacao {
   }
 
   public boolean remove(Unidades unidade) {
-    if (unidades.get(TiposDeUnidades.valueOf(unidade.tipoDeObjeto.name())).remove(unidade)) {
-      unidade.civilizacao.atualizarPopulacaoAtual();
-      Ataque.checarSeCivilizacaoFoiExtinta(unidade.civilizacao);
+    if (unidades.get(TiposDeUnidades.valueOf(unidade.getTipoDeObjeto().name())).remove(unidade)) {
+      unidade.getCivilizacao().atualizarPopulacaoAtual();
+      Ataque.checarSeCivilizacaoFoiExtinta(unidade.getCivilizacao());
       return true;
     }
     return false;

@@ -1,4 +1,11 @@
-package ageV3;
+package agev3.criacoes.construcoes;
+
+import agev3.civilizacoes.Civilizacao;
+import agev3.civilizacoes.TiposDeCivilizacoes;
+import agev3.criacoes.Posicao;
+import agev3.criacoes.dados.Custo;
+import agev3.criacoes.unidades.TiposDeUnidades;
+import agev3.criacoes.unidades.Unidades;
 
 /**
  *

@@ -1,4 +1,7 @@
-package ageV3;
+package agev3.civilizacoes;
+
+import agev3.Objeto;
+import agev3.criacoes.construcoes.TiposDeConstrucoes;
 
 /**
  *

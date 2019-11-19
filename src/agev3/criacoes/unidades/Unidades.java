@@ -1,4 +1,13 @@
-package ageV3;
+package agev3.criacoes.unidades;
+
+import agev3.civilizacoes.Civilizacao;
+import agev3.civilizacoes.TiposDeCivilizacoes;
+import agev3.criacoes.CriavelDurantePartida;
+import agev3.criacoes.Posicao;
+import agev3.criacoes.TiposCriaveisDurantePartidas;
+import agev3.criacoes.dados.Direcao;
+import agev3.criacoes.dados.PontosDeVida;
+import agev3.criacoes.dados.Velocidade;
 
 /**
  *
@@ -8,7 +17,7 @@ public class Unidades extends CriavelDurantePartida {
   
   public void mover (Direcao direcao) {
     if (direcao != null) {
-      var velocidade = Velocidade.valueOf(tipoDeObjeto.name()).getVelocidade();
+      double velocidade = Velocidade.valueOf(tipoDeObjeto.name()).getVelocidade();
       this.posicao.modificarXEm(velocidade * direcao.getMudancaNoEixo()[0]);
       this.posicao.modificarYEm(velocidade * direcao.getMudancaNoEixo()[1]);
     }

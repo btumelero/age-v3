@@ -1,4 +1,4 @@
-package ageV3;
+package agev3.criacoes.dados;
 
 /**
  * Armazena o valor da armadura das unidades 
